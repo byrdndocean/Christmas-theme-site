@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- TITLE -->
+        <title>Christmas</title>
+        <!-- WEBSITE'S FAVICON -->
+        <link rel="icon" href="assets/favicon.png">
+        <!-- VIEW -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <!-- FONTS -->
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins&display=swap" rel="stylesheet">
+        
+        <!-- SWIPER.JS -->
+        <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+       
+        <!-- REMIX ICONS -->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        
+        <!-- Jquery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        
+    </head>
+    <body>
+
+        <!------------- PRELOADER ------------->
+        <div class="preloader">
+            <div class="loader"></div>
+        </div>
+
+        <!------------- SCROLL TO TOP BUTTON ------------->
+        <div id="scrollToTopBtn" onclick='scrollToTop()'>
+            <i class="ri-arrow-up-line"></i>
+        </div>
+
+        <!------------- HEADER ------------->
+        <div class="home" id="home">
+            <nav>
+                <!-- NAV LOGO -->
+                <div class="nav-logo">
+                    <img src="assets/favicon.png" alt="">
+                    <h2 id="company">Christmas</h2>
+                </div>
+                <!-- NAV MENU -->
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li>
+                            <a class="ri-home-3-line icon" href="#home"></a>
+                            <a href="#home" class="pages">Home</a>
+                        </li>
+                        <li>
+                            <a class="ri-store-2-line icon" href="#shop"></a>
+                            <a href="#shop" class="pages">Shop</a>
+                        </li>
+                        <li>
+                            <a class="ri-star-line icon" href="#share"></a>
+                            <a href="#share" class="pages">Share</a>
+                        </li>
+                        <li>
+                            <a class="ri-emotion-line icon" href="#party"></a>
+                            <a href="#party" class="pages">Party</a>
+                        </li>
+                    </ul>
+
+                    <div class="nav-close" id="nav-close" onclick="hideNav()">
+                        <i class="ri-close-line"></i>
+                    </div>
+                    <img src="assets/christmas-banner.png" alt="" id="banner">
+                </div>
+                <i class="ri-moon-line" id="moon" onclick="changeToDark()"></i>
+                <i class="ri-sun-line" id="sun" onclick="changeToLight()"></i>
+                    <div class="nav-toggle" id="nav-toggle" onclick="showNav()">
+                        <i class="ri-apps-line"></i>
+                    </div>
+            </nav>
+            <!-- LANDING PAGE -->
+            <div class="header" id="header">
+                <img src="assets/christmas-tree.png" alt="">
+                            <div class="content" data-inViewport='slideTop'>
+                <h2 id="title">Merry Christmas!</h2>
+                <p>Christmas is a time for bonding with family and friends!
+                    <br>Wish everyone a Merry Christmas and 
+                    <br> a happy New Year!
+                </p>
+                <button onclick="scrollToShop()">Explore</button>
+            </div>
+            </div>
+        </div>
+              
+        <!------------- GIFT SHOP ------------->
+        <div class="gifts" id="shop">
+            <h2>Gift Shop</h2>
+            <p>Best quality gifts for you and your loved ones to enjoy during Christmas.</p>
+            <div class="items">
+                <div data-inViewport='slideTop'>
+                    <img src="assets/christmas-cup.png" alt="" id="cup">
+                    <span>Ceramic Cup <br><span class="price">$15</span></span>
+                    <button class="add" id="add1">Add to cart</button>
+                </div>
+                <div data-inViewport='slideTop'>
+                    <img src="assets/coat.png" alt="" id="coat">
+                    <span>Ceramic Cup <br><span class="price">$25</span></span>
+                    <button class="add" id="add2">Add to cart</button>
+                </div>
+                <div data-inViewport='slideTop'>
+                    <img src="assets/sock.png" alt="" id="socks">
+                    <span>Ceramic Cup <br><span class="price">$10</span></span>
+                    <button class="add" id="add3">Add to cart</button>
+                </div>
+                <div data-inViewport='slideTop'>
+                    <img src="assets/snow-globe.png" alt="" id="globe">
+                    <span>Ceramic Cup <br><span class="price">$20</span></span>
+                    <button class="add" id="add4">Add to cart</button>
+                </div>
+            </div>
+
+                <!----------------- POP UPS ------------------------>
+                <div class="pop-up popup1" id="pop-up1">
+                    <span class="close close1">&times;</span>
+                    <img class="pop-up-content" id="christmas-cup" src="" alt="">
+                </div>
+                <div class="pop-up popup2" id="pop-up2">
+                    <span class="close close2">&times;</span>
+                    <img class="pop-up-content" id="winter-coat" src="" alt="">
+                </div>
+                <div class="pop-up popup3" id="pop-up3">
+                    <span class="close close3">&times;</span>
+                    <img class="pop-up-content" id="sock" src="" alt="">
+                </div>
+                <div class="pop-up popup4" id="pop-up4">
+                    <span class="close close4">&times;</span>
+                    <img class="pop-up-content" id="snowGlobe" src="" alt="">
+                </div>
+        </div>
+        
+        <!------------- SHARE A GIFT ------------->
+        <div class="share" id="share">
+            <img src="assets/jingle-bells.png" alt="">
+            <h2>Share A Gift</h2>
+            <p data-inViewport="slideLeft">
+                Sharing is caring. Share a gift to someone you care!
+            </p>
+
+            <!-- SWIPER -->
+            <div class="swiper mySwiper" data-inViewport="slideTop">
+                <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <i class="ri-share-forward-line"></i>
+                    <h2>Candy Cane <br> $4</h2>
+                    <img src="assets/candy-cane.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <i class="ri-share-forward-line"></i>
+                    <h2>Snowman <br> $5</h2>
+                    <img src="assets/snowman.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <i class="ri-share-forward-line"></i>
+                    <h2>Santa Claus's Hat <br> $6</h2>
+                    <img src="assets/santa-hat.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <i class="ri-share-forward-line"></i>
+                    <h2>Gingerbread Man <br> $3</h2>
+                    <img src="assets/gingerbread-man.png" alt="">
+                </div>
+            </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    </div>
+
+
+        <!------------- PARTY ------------->
+
+        <div class="party" id="party">
+            <h2>Party</h2>
+            <div class="signup" data-inViewport="slideLeft">
+            <p>Sign up to receive an email on the details. <br>You may cancel your registration at anytime.</p>
+            <form>
+                <input type="email" placeholder="Enter Email" id="email" autocomplete="off" required="required">
+                <button type="submit" class="signUp" onclick="signUp()">Sign Up</button>
+            </form>
+            <img src="assets/christmas-label.jpg" alt="">
+            </div>
+        </div>
+
+        <!------------- FOOTER ------------->
+        <div class="footer">
+            <div class="links">
+                <ul>
+                    <h2>Overview</h2>
+                    <li><a href="#">Prices</a></li>
+                    <li><a href="#">Promotion</a></li>
+                    <li><a href="#">Privacy & Policy</a></li>
+                </ul>
+                <ul>
+                    <h2>Others</h2>
+                    <li><a href="#">Donate</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Our Team</a></li>
+                </ul>
+            </div>
+            <p>© Copyright 2022. Codingstar Tutorials.
+                Images by <a href='https://iconscout.com/contributors/iconscout'>IconScout Store, <a href='https://iconscout.com/contributors/iqonic-design'>iqonic.design</a>, <br> and <a href='https://www.freepik.com/'>Freepik</a></p>
+            </p>
+            <img src="assets/fireplace.jpg" alt="">
+            <img src="assets/snowflake.jpg" id="snowflake" alt="">
+            <img src="assets/snowflake.png" alt="">
+            <img src="assets/jingle-bells.png" alt="">
+        </div>
+        
+        <!-- SCRIPT -->
+        <script src="main.js"></script>
+        
+    </body>
+</html>
